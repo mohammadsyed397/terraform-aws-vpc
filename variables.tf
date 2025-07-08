@@ -17,6 +17,7 @@ variable "vpc_tags" {
 }
 variable "igw_tags"{
     type = map(string)
+    default = {}
 }
 variable "public_cidr_blocks"{
     type = list(string)
@@ -60,6 +61,14 @@ variable "private_route_table_tags" {
     default = {}
 }
 variable "database_route_table_tags" {
+    type = map(string)
+    default = {}
+}
+variable "is_peering_required" {
+    default = false
+}
+
+variable "vpc_peering_tags" {
     type = map(string)
     default = {}
 }
